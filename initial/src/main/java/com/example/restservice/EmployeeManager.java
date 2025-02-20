@@ -2,6 +2,10 @@ package com.example.restservice;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+import java.util.List;
+
+
 @Repository
 public class EmployeeManager {
     private static Employees employees = new Employees();
@@ -26,4 +30,13 @@ public class EmployeeManager {
     public void addEmployee(Employee employee) {
         employees.getEmployeeList().add(employee);
     }
+   public Employee getById(String id){
+        return employees.getEmployeeById(id);
+   }
+   public void delete(String id){
+        employees.deleteById(id);
+   }
+   public void update(String id, Employee employee){
+        employees.update(id, employee);
+   }
 }
